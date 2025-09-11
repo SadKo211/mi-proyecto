@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle } from '@ionic/angular/standalone';
 
 
+
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
