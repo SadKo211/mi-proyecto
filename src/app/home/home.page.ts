@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { IonHeader, IonToolbar, IonTitle, IonContent, IonButton } from '@ionic/angular/standalone';
 import { CommonModule } from '@angular/common';
-import { IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle } from '@ionic/angular/standalone';
+import { IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle,IonIcon  } from '@ionic/angular/standalone';
 
 
 
@@ -10,12 +10,15 @@ import { IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle }
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
-  imports: [IonHeader, IonToolbar, IonTitle, IonContent, IonButton, RouterModule,CommonModule,IonCard,IonCardContent,IonCardHeader,IonCardSubtitle,IonCardTitle],
+  imports: [IonHeader, IonToolbar, IonTitle, IonContent, IonButton, RouterModule,CommonModule,IonCard,IonCardContent,IonCardHeader,IonCardSubtitle,IonCardTitle,IonIcon ],
   
 })
 export class HomePage implements OnInit {
 
   email: string = "";
+   goToPerfil() {
+    this.router.navigate(['/perfil']);
+  }
 
   constructor(private activateRoute: ActivatedRoute, 
               private router: Router) {}

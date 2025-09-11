@@ -37,3 +37,33 @@
     color: #888;
     margin-top: 16px;
 }
+.center-icon {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;           /* sobre el toolbar */
+}
+
+.center-icon ion-icon {
+  font-size: 36px;       /* tamaño visible */
+  color: black;          /* color visible */
+  display: block;        /* asegura que se renderice */
+}
+.card-img {
+  width: 100%;          /* ocupa todo el ancho de la card */
+  height: auto;          /* altura automática según la imagen */
+  object-fit: contain;   /* mantiene proporción y muestra toda la imagen */
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+
+
+
+
+
+
+
+
+

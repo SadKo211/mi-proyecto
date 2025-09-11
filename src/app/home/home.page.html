@@ -2,17 +2,29 @@
 
 <ion-header [translucent]="true">
   <ion-toolbar class="toolbar1">
-    
-    
-      <span class="titulo">Bienvenido</span>
-      
-      <ion-button slot="end" routerLink="/login">
-      Cerrar sesión
+
+    <!-- Título centrado -->
+    <ion-title class="titulo">
+      Bienvenido @en.santibanez
+    </ion-title>
+
+    <!-- Icono tipo persona en el centro -->
+    <ion-button slot="primary" class="center-icon">
+      <ion-button fill="clear" (click)="goToPerfil()">
+        <ion-icon slot="icon-only" name="person-circle"></ion-icon>
       </ion-button>
-      
-    
+    </ion-button>
+
+    <!-- Botón cerrar sesión a la derecha -->
+    <ion-button slot="end" routerLink="/login">
+      Cerrar sesión
+    </ion-button>
+
   </ion-toolbar>
 </ion-header>
+
+
+
 
 
 
@@ -20,6 +32,7 @@
 <ion-content>
   <!-- Card 1 -->
   <ion-card>
+    <img src="../../assets/img/foto1.png" alt="Ramo Buchon" class="card-img"/>
     <ion-card-header>
       <ion-card-title>Ramo Buchon</ion-card-title>
       <ion-card-subtitle>Ramo N1</ion-card-subtitle>
@@ -32,18 +45,20 @@
 
   <!-- Card 2 -->
   <ion-card>
+    <img src="../../assets/img/foto2.png" alt="Ramo Buchon + Accesorio" class="card-img"/>
     <ion-card-header>
       <ion-card-title>Ramo Buchon + Accesorio</ion-card-title>
       <ion-card-subtitle>Ramo N2</ion-card-subtitle>
     </ion-card-header>
 
     <ion-card-content>
-      Ramo buchon con tematica de Colo-Colo + accesorios de mariposas y coronas
+      Ramo buchon con temática de Colo-Colo + accesorios de mariposas y coronas
     </ion-card-content>
   </ion-card>
 
   <!-- Card 3 -->
   <ion-card>
+    <img src="../../assets/img/foto3.png" alt="Ramo Buchon + Girasol" class="card-img"/>
     <ion-card-header>
       <ion-card-title>Ramo Buchon + Girasol</ion-card-title>
       <ion-card-subtitle>Ramo N3</ion-card-subtitle>
@@ -54,12 +69,6 @@
     </ion-card-content>
   </ion-card>
 </ion-content>
-
-
-
-
-
-
 
 
 

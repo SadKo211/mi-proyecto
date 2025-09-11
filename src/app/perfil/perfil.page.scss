@@ -1,0 +1,28 @@
+.mini-profile-card {
+  width: 300px;
+  margin: 20px auto; /* centrada horizontalmente */
+  text-align: center;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.profile-avatar {
+  margin: 0 auto 10px auto;
+  width: 80px;
+  height: 80px;
+}
+
+.mini-profile-card ion-card-title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.mini-profile-card ion-card-subtitle {
+  font-size: 14px;
+  color: gray;
+}
+
+.mini-profile-card ion-card-content p {
+  margin-bottom: 10px;
+  font-size: 14px;
+}
