@@ -3,14 +3,14 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { createAnimation } from '@ionic/angular';
-import { IonToast, IonItem, IonButton, IonInputPasswordToggle, IonInput } from '@ionic/angular/standalone';
+import { IonToast, IonItem, IonButton, IonInputPasswordToggle, IonInput,IonContent } from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
   standalone: true,
-  imports: [CommonModule, FormsModule, IonItem, IonButton, IonInput, IonInputPasswordToggle, IonToast,]
+  imports: [CommonModule, FormsModule, IonItem, IonButton, IonInput, IonInputPasswordToggle, IonToast,IonContent]
 })
 export class LoginPage {
   email: string = '';

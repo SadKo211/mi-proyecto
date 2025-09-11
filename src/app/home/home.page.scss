@@ -1,69 +1,106 @@
+.home-background {
+  --background: linear-gradient(to bottom, #8000ff, #ffffff);
+}
 
-
-
-
-  .toolbar-flex {
+.home-container {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;       /* centra las cards horizontalmente */
+  padding-top: 20px;
   display: flex;
-  justify-content: space-between; /* Empuja elementos a los extremos */
-  align-items: center;            /* Centra verticalmente */
-  width: 100%;                    /* Ocupa todo el ancho */
-
+  flex-direction: column;
+  gap: 20px;            /* espacio entre cards */
 }
 
-.titulo {
-  font-size: 20px;
-  font-weight: bold;
-  color: rgb(0, 0, 0);
-  padding: 15px;
-  font-style: italic;
-}
-.fondo-gradiente {
-  height: 100vh;
-  background: linear-gradient(to bottom, #8000ff, #ffffff);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.card-img {
-  width: 100%;   /* ocupa todo el ancho de la card */
-  max-height: 200px; /* altura máxima */
-  object-fit: cover; /* recorta la imagen sin deformarla */
-  border-radius: 10px;
-  }
-
-.version-info {
-    text-align: center;
-    font-size: 0.8em;
-    color: #888;
-    margin-top: 16px;
-}
-.center-icon {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 10;           /* sobre el toolbar */
-}
-
-.center-icon ion-icon {
-  font-size: 36px;       /* tamaño visible */
-  color: black;          /* color visible */
-  display: block;        /* asegura que se renderice */
-}
 .card-img {
   width: 100%;          /* ocupa todo el ancho de la card */
-  height: auto;          /* altura automática según la imagen */
+  max-height: 150px;    /* limita la altura para que no sean demasiado grandes */
   object-fit: contain;   /* mantiene proporción y muestra toda la imagen */
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
+  background-color: #fff; /* opcional: fondo blanco para ver mejor la imagen si tiene transparencia */
 }
 
 
+.version-info {
+  text-align: center;
+  font-size: 0.8em;
+  color: #888;
+  margin-top: 16px;
+}
+.home-container {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
 
+ion-card {
+  border-radius: 16px;            /* bordes redondeados */
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);  /* sombra ligera */
+  overflow: hidden;                /* que la imagen respete los bordes */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  background-color: #fff;          /* fondo blanco */
+}
 
+ion-card:hover {
+  transform: translateY(-4px);     /* efecto flotante al pasar el mouse */
+  box-shadow: 0 10px 20px rgba(0,0,0,0.25);
+}
 
+.card-img {
+  width: 100%;
+  max-height: 150px;       /* tamaño de la imagen más pequeño */
+  object-fit: contain;      /* muestra la imagen completa */
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  background-color: #f5f5f5;  /* fondo gris claro opcional */
+}
 
+ion-card-header {
+  padding: 10px 15px;
+}
 
+ion-card-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
 
+ion-card-subtitle {
+  font-size: 14px;
+  color: gray;
+}
 
+ion-card-content {
+  padding: 10px 15px;
+  font-size: 14px;
+  color: #555;
+}
+ion-card-title {
+  font-family: 'Poppins', sans-serif;   /* tipografía moderna */
+  font-size: 20px;
+  font-weight: 600;
+  color: #4a148c;                       /* morado oscuro para resaltar */
+  margin-bottom: 4px;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.2); /* sombra ligera */
+}
+
+ion-card-subtitle {
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #7b1fa2;                       /* morado más claro */
+  margin-bottom: 8px;
+}
+
+ion-card-content {
+  font-family: 'Roboto', sans-serif;    /* más neutral para el contenido */
+  font-size: 14px;
+  color: #555;
+  line-height: 1.5;
+}
 
