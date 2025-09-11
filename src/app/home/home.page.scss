@@ -1,0 +1,32 @@
+
+
+
+
+  .toolbar-flex {
+  display: flex;
+  justify-content: space-between; /* Empuja elementos a los extremos */
+  align-items: center;            /* Centra verticalmente */
+  width: 100%;                    /* Ocupa todo el ancho */
+
+}
+
+.titulo {
+  font-size: 20px;
+  font-weight: bold;
+  color: rgb(0, 0, 0);
+  padding: 15px;
+  font-style: italic;
+}
+.fondo-gradiente {
+  height: 100vh;
+  background: linear-gradient(to bottom, #8000ff, #ffffff);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card-img {
+  width: 100%;   /* ocupa todo el ancho de la card */
+  max-height: 200px; /* altura máxima */
+  object-fit: cover; /* recorta la imagen sin deformarla */
+  border-radius: 10px;
+  }
