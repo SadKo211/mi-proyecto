@@ -1,71 +1,72 @@
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Component, ElementRef, ViewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { Router } from '@angular/router';
-import { createAnimation } from '@ionic/angular';
-import { IonToast, IonItem, IonButton, IonInputPasswordToggle, IonInput,IonContent } from '@ionic/angular/standalone';
+import { Router, RouterLink } from '@angular/router';
+import { AuthService } from '../services/auth.service';
+import { addIcons } from 'ionicons';
+import { personOutline, lockClosedOutline, logInOutline } from 'ionicons/icons';
+
+// Importamos SOLO los componentes necesarios para el LOGIN
+import { 
+  IonContent, IonHeader, IonTitle, IonToolbar, IonItem, IonInput, 
+  IonButton, IonIcon, IonText, IonSpinner, ToastController, 
+  IonInputPasswordToggle 
+} from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
   standalone: true,
-  imports: [CommonModule, FormsModule, IonItem, IonButton, IonInput, IonInputPasswordToggle, IonToast,IonContent]
+  imports: [
+    CommonModule, FormsModule, RouterLink,
+    IonContent, IonHeader, IonTitle, IonToolbar, IonItem, IonInput, 
+    IonButton, IonIcon, IonText, IonSpinner, IonInputPasswordToggle 
+  ]
 })
 export class LoginPage {
+
   email: string = '';
   password: string = '';
-  isToastOpen = false;
+  cargando: boolean = false; // Variable para mostrar spinner al iniciar
 
-  @ViewChild('emailInput', { read: ElementRef }) emailInput!: ElementRef;
-  @ViewChild('passwordInput', { read: ElementRef }) passwordInput!: ElementRef;
+  private authService = inject(AuthService);
+  private router = inject(Router);
+  private toastController = inject(ToastController);
 
-  constructor(private router: Router) { }
+  constructor() {
+    addIcons({ personOutline, lockClosedOutline, logInOutline });
+  }
 
-  login(event: Event) {
-    event.preventDefault();
+  async login() {
+    // Validación de campos vacíos
+    if (!this.email || !this.password) {
+      this.mostrarMensaje('Por favor ingresa correo y contraseña', 'warning');
+      return;
+    }
 
-    if (this.email === 'en.santibanez@duocuc.cl' && this.password === '121212') {
-      this.animateSuccess();
-      setTimeout(() => {
-        this.router.navigateByUrl('/home', {
-          state: { email: this.email }
-        });
-      }, 600);
-    } else {
-      this.animateError();
-      this.isToastOpen = true;
+    this.cargando = true; // Activar spinner
+
+    try {
+      await this.authService.login(this.email, this.password);
+      
+      this.cargando = false;
+      this.mostrarMensaje('¡Bienvenido!', 'success');
+      this.router.navigate(['/home']); // Navegar al Home real
+
+    } catch (error) {
+      this.cargando = false;
+      this.mostrarMensaje('Credenciales incorrectas', 'danger');
     }
   }
 
-  animateSuccess() {
-    const animation = createAnimation()
-      .addElement(this.emailInput.nativeElement)
-      .addElement(this.passwordInput.nativeElement)
-      .duration(400)
-      .keyframes([
-        { offset: 0, transform: 'scale(1)', background: 'transparent' },
-        { offset: 0.5, transform: 'scale(1.05)', background: '#d4edda' },
-        { offset: 1, transform: 'scale(1)', background: 'transparent' }
-      ]);
-
-    animation.play();
-  }
-
-  animateError() {
-    const animation = createAnimation()
-      .addElement(this.emailInput.nativeElement)
-      .addElement(this.passwordInput.nativeElement)
-      .duration(100)
-      .iterations(3)
-      .keyframes([
-        { offset: 0, transform: 'translateX(0px)' },
-        { offset: 0.25, transform: 'translateX(-10px)' },
-        { offset: 0.5, transform: 'translateX(10px)' },
-        { offset: 0.75, transform: 'translateX(-10px)' },
-        { offset: 1, transform: 'translateX(0px)' }
-      ]);
-
-    animation.play();
+  async mostrarMensaje(mensaje: string, color: string) {
+    const toast = await this.toastController.create({
+      message: mensaje,
+      duration: 2000,
+      color: color,
+      position: 'bottom'
+    });
+    toast.present();
   }
 }

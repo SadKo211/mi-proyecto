@@ -1,73 +1,64 @@
-
-
-<ion-header [translucent]="true">
-  <ion-toolbar class="toolbar1">
-
-    <!-- Título centrado -->
-    <ion-title class="titulo">
-      Bienvenido @en.santibanez
-    </ion-title>
-
-    <!-- Icono tipo persona en el centro -->
-    <ion-button slot="primary" class="center-icon">
-      <ion-button fill="clear" (click)="goToPerfil()">
-        <ion-icon slot="icon-only" name="person-circle"></ion-icon>
+<ion-header [translucent]="true" class="ion-no-border">
+  <ion-toolbar class="home-toolbar">
+    <ion-title>Huellitas By Amor</ion-title>
+    
+    <ion-buttons slot="end">
+      
+      <ion-buttons slot="end">
+  <ion-button routerLink="/perfil">
+    <ion-icon slot="start" name="person-circle-outline"></ion-icon>
+    *PERFIL*
+  </ion-button>
+</ion-buttons>
+      <ion-button (click)="logout()" color="danger">
+        <ion-icon slot="icon-only" name="log-out-outline"></ion-icon>
       </ion-button>
-    </ion-button>
-
-    <!-- Botón cerrar sesión a la derecha -->
-    <ion-button slot="end" routerLink="/login">
-      Cerrar sesión
-    </ion-button>
-
+      
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
+<ion-content [fullscreen]="true" class="bg-gradient">
 
-
-
-<ion-content fullscreen class="home-background">
-  <div class="home-container">
-    <!-- Card 1 -->
-    <ion-card>
-      <img src="../../assets/img/foto1.png" alt="Ramo Buchon" class="card-img"/>
-      <ion-card-header>
-        <ion-card-title>Ramo Buchon</ion-card-title>
-        <ion-card-subtitle>Ramo N1</ion-card-subtitle>
-      </ion-card-header>
-      <ion-card-content>
-        Descripcion: Ramo buchon de 7 Flores a pedido del cliente
-      </ion-card-content>
-    </ion-card>
-
-    <!-- Card 2 -->
-    <ion-card>
-      <img src="../../assets/img/foto2.png" alt="Ramo Buchon + Accesorio" class="card-img"/>
-      <ion-card-header>
-        <ion-card-title>Ramo Buchon + Accesorio</ion-card-title>
-        <ion-card-subtitle>Ramo N2</ion-card-subtitle>
-      </ion-card-header>
-      <ion-card-content>
-       Descripcion: Ramo buchon con temática de Colo-Colo + accesorios de mariposas y coronas
-      </ion-card-content>
-    </ion-card>
-
-    <!-- Card 3 -->
-    <ion-card>
-      <img src="../../assets/img/foto3.png" alt="Ramo Buchon + Girasol" class="card-img"/>
-      <ion-card-header>
-        <ion-card-title>Ramo Buchon + Girasol</ion-card-title>
-        <ion-card-subtitle>Ramo N3</ion-card-subtitle>
-      </ion-card-header>
-      <ion-card-content>
-        Descipcion: Ramo buchon de 6 Flores + Girasol de flor eterna
-      </ion-card-content>
-    </ion-card>
-
-    <div class="version-info">
-      <span>Versión 1.0.0</span>
-    </div>
+  <div class="welcome-section ion-padding">
+    <h2>Hola, <br> <b>{{ usuario }}</b></h2>
+    <p>¿Qué detalle especial buscas hoy?</p>
   </div>
+
+  <div class="ion-text-center ion-padding" *ngIf="cargando">
+    <ion-spinner name="crescent" color="primary"></ion-spinner>
+    <p>Cargando productos...</p>
+  </div>
+
+  <ion-grid fixed *ngIf="!cargando">
+    <ion-row>
+      <ion-col size="12" size-md="6" size-lg="4" *ngFor="let prod of productos">
+        <ion-card class="product-card">
+          <div class="image-container">
+            <img [src]="prod.imagen" alt="{{ prod.titulo }}" onerror="this.src='assets/icon/favicon.png'"/>
+            <ion-badge color="secondary" class="price-badge">${{ prod.precio | number }}</ion-badge>
+          </div>
+
+          <ion-card-header>
+            <ion-card-subtitle>{{ prod.categoria || 'Accesorio' }}</ion-card-subtitle>
+            <ion-card-title>{{ prod.titulo }}</ion-card-title>
+          </ion-card-header>
+
+          <ion-card-content>
+            <p class="description">{{ prod.descripcion }}</p>
+            <div class="card-actions ion-margin-top">
+              <ion-button fill="outline" size="small" color="medium">
+                <ion-icon slot="icon-only" name="heart-outline"></ion-icon>
+              </ion-button>
+              <ion-button (click)="verDetalle(prod)" expand="block" class="buy-btn" size="small">
+                Ver Detalle
+                <ion-icon slot="end" name="cart-outline"></ion-icon>
+              </ion-button>
+            </div>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
 </ion-content>
-
-

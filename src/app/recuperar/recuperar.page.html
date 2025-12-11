@@ -1,0 +1,46 @@
+<ion-content [fullscreen]="true" class="bg-gradient">
+
+  <div class="main-container">
+    
+    <div class="form-card"> 
+
+      <div class="back-button-container">
+        <ion-button routerLink="/login" fill="clear" color="medium">
+          <ion-icon slot="icon-only" name="arrow-back-outline"></ion-icon>
+        </ion-button>
+      </div>
+
+      <div class="header-section ion-text-center">
+        <img src="assets/img/logo.jpg" alt="Logo" class="logo-img" onerror="this.src='assets/icon/favicon.png'">
+        <h2 class="app-title">Recuperar Cuenta</h2>
+        <p class="app-subtitle">Ingresa tu correo para restablecer tu clave</p>
+      </div>
+
+      <div class="form-section">
+        
+        <ion-item lines="none" class="custom-input-item ion-margin-bottom">
+          <ion-icon slot="start" name="mail-outline" color="medium"></ion-icon>
+          <ion-input 
+            label="Correo Electrónico" 
+            labelPlacement="floating" 
+            type="email"
+            [(ngModel)]="email"    
+            placeholder="ejemplo@correo.com">
+          </ion-input>
+        </ion-item>
+
+        <ion-button (click)="recuperar()" expand="block" class="main-btn ion-margin-top">
+          ENVIAR ENLACE
+        </ion-button>
+
+        <div class="ion-text-center ion-margin-top">
+          <ion-button routerLink="/login" fill="clear" size="small" class="secondary-btn">
+            Volver al Inicio de Sesión
+          </ion-button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</ion-content>

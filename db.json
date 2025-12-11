@@ -1,0 +1,19 @@
+{
+  "users": [
+    {
+      "id": "ef40",
+      "email": "enzoelias332211@gmail.com",
+      "password": "123456"
+    },
+    {
+      "id": "ccb7",
+      "email": "test@huellitas.com",
+      "password": "123456"
+    },
+    {
+      "id": "d651",
+      "email": "fabi@gmail.com",
+      "password": "123456"
+    }
+  ]
+}

@@ -1,6 +1,24 @@
 apply plugin: 'com.android.application'
 
 android {
+  signingConfigs {
+    release {
+      storeFile file('my-release-key.keystore')
+      storePassword 'sadko123'
+      keyAlias 'my_app_alias'
+      keyPassword 'sadko123 '
+    }
+  }
+
+  buildTypes {
+    release {
+      // Esta línea asegura que la variante 'release' use la configuración de arriba
+      signingConfig signingConfigs.release
+
+      minifyEnabled false
+      proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+    }
+  }
     namespace "io.ionic.starter"
     compileSdk rootProject.ext.compileSdkVersion
     defaultConfig {

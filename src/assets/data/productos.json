@@ -1,0 +1,23 @@
+[
+  {
+    "titulo": "Ramo Buchón",
+    "subtitulo": "Ramo N1",
+    "precio": 25000,
+    "descripcion": "Ramo buchón de 7 Flores a pedido del cliente.",
+    "imagen": "assets/img/foto1.png"
+  },
+  {
+    "titulo": "Ramo Buchón + Accesorio",
+    "subtitulo": "Ramo N2",
+    "precio": 35000,
+    "descripcion": "Temática de Colo-Colo + accesorios de mariposas y coronas.",
+    "imagen": "assets/img/foto2.png"
+  },
+  {
+    "titulo": "Ramo Buchón + Girasol",
+    "subtitulo": "Ramo N3",
+    "precio": 28000,
+    "descripcion": "Hermosa combinación de rosas rojas con girasoles frescos.",
+    "imagen": "'assets/img/foto3.png"
+  }
+]

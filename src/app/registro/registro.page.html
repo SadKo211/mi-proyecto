@@ -1,0 +1,76 @@
+<ion-content [fullscreen]="true" class="bg-gradient">
+
+  <div class="main-container">
+    
+    <div class="register-card">
+
+      <div class="header-section ion-text-center">
+        <img src="assets/img/logo.jpg" alt="Logo" class="logo-img">
+        <h2 class="app-title">Crear Cuenta</h2>
+        <p class="app-subtitle">Únete a Huellitas By Amor</p>
+      </div>
+
+      <div class="form-section">
+        
+        <ion-item lines="none" class="custom-input-item ion-margin-bottom">
+          <ion-icon slot="start" name="person-outline" color="medium"></ion-icon>
+          <ion-input 
+            label="Nombre Completo" 
+            labelPlacement="floating" 
+            type="text"
+            [(ngModel)]="nombre"
+            placeholder="Ej: Juan Pérez">
+          </ion-input>
+        </ion-item>
+
+        <ion-item lines="none" class="custom-input-item ion-margin-bottom">
+          <ion-icon slot="start" name="mail-outline" color="medium"></ion-icon>
+          <ion-input 
+            label="Correo Electrónico" 
+            labelPlacement="floating" 
+            type="email"
+            [(ngModel)]="email"    
+            placeholder="ejemplo@correo.com">
+          </ion-input>
+        </ion-item>
+
+        <ion-item lines="none" class="custom-input-item ion-margin-bottom">
+          <ion-icon slot="start" name="lock-closed-outline" color="medium"></ion-icon>
+          <ion-input 
+            label="Contraseña" 
+            labelPlacement="floating" 
+            type="password"
+            [(ngModel)]="password" 
+            placeholder="Crea una contraseña">
+          </ion-input>
+          <ion-input-password-toggle slot="end"></ion-input-password-toggle>
+        </ion-item>
+
+        <ion-item lines="none" class="custom-input-item ion-margin-bottom">
+          <ion-icon slot="start" name="lock-closed-outline" color="medium"></ion-icon>
+          <ion-input 
+            label="Repetir Contraseña" 
+            labelPlacement="floating" 
+            type="password"
+            [(ngModel)]="confirmPassword"
+            placeholder="Confirma tu contraseña">
+          </ion-input>
+          <ion-input-password-toggle slot="end"></ion-input-password-toggle>
+        </ion-item>
+
+        <ion-button (click)="registrarse()" expand="block" class="main-btn ion-margin-top">
+          REGISTRARME
+        </ion-button>
+
+        <div class="ion-text-center ion-margin-top">
+          <p class="small-text">¿Ya tienes una cuenta?</p>
+          <ion-button routerLink="/login" fill="clear" size="small" class="secondary-btn">
+            Inicia Sesión aquí
+          </ion-button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</ion-content>

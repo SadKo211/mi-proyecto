@@ -1,0 +1,96 @@
+// ... (Tus estilos anteriores se mantienen igual) ...
+// Copia todo lo anterior y agrega/modifica esto al final o donde corresponda:
+
+// 1. Fondo Gradiente
+ion-content.bg-gradient {
+  --background: linear-gradient(135deg, #a4508b 0%, #5f0a87 74%);
+}
+
+// 2. Header Transparente
+.transparent-toolbar {
+  --background: transparent;
+  --color: white;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+.header-title { font-weight: 600; font-size: 1.1rem; }
+
+// 3. Contenedor y Tarjeta
+.main-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100%;
+  padding: 20px;
+  padding-top: 60px;
+}
+
+.detail-card {
+  background: #ffffff;
+  width: 100%;
+  max-width: 400px;
+  border-radius: 25px;
+  overflow: hidden;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+// 4. Imagen y Precio
+.image-header {
+  position: relative;
+  height: 280px;
+  background-color: #f0f0f0;
+
+  img { width: 100%; height: 100%; object-fit: cover; }
+}
+
+.price-badge {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.9);
+  color: #5f0a87;
+  font-weight: 800;
+  font-size: 1.4rem;
+  padding: 8px 16px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  backdrop-filter: blur(5px);
+}
+
+// 5. Textos
+.info-content { padding: 25px; }
+.category { color: #888; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 600; margin-bottom: 5px; }
+.title { color: #333; font-size: 1.8rem; font-weight: 800; line-height: 1.2; margin-top: 0; margin-bottom: 15px; }
+.divider { width: 50px; height: 4px; background: #daae51; border-radius: 2px; margin-bottom: 20px; }
+.description-title { color: #444; font-weight: 700; font-size: 1rem; margin-bottom: 8px; }
+.description-text { color: #666; line-height: 1.6; font-size: 0.95rem; margin-bottom: 20px; }
+
+// === ESTILO NUEVO PARA EL ÁREA DE TEXTO ===
+.custom-textarea {
+  --background: #f5f6f8; // Gris suave
+  background: #f5f6f8;
+  border-radius: 15px;
+  padding: 5px 10px;
+  
+  ion-textarea {
+    --padding-start: 10px;
+    --placeholder-color: #999;
+    --color: #333;
+  }
+}
+
+// 6. Botón
+.add-btn {
+  --background: #5f0a87;
+  --border-radius: 12px;
+  height: 50px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  --box-shadow: 0 8px 20px rgba(95, 10, 135, 0.25);
+}
+
+.text-white { color: white; h2 { margin-bottom: 20px; } }

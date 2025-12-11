@@ -1,0 +1,62 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar class="transparent-toolbar">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home" color="light" text=""></ion-back-button>
+    </ion-buttons>
+    <ion-title class="header-title">Detalle</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="bg-gradient">
+
+  <div *ngIf="producto; else noData" class="main-container">
+
+    <div class="detail-card">
+      
+      <div class="image-header">
+        <img [src]="producto.imagen" onerror="this.src='https://placehold.co/600x400/e0e0e0/ffffff?text=Sin+Imagen'"/>
+        <div class="price-badge">${{ producto.precio | number }}</div>
+      </div>
+
+      <div class="info-content">
+        <h3 class="category">{{ producto.subtitulo }}</h3>
+        <h1 class="title">{{ producto.titulo }}</h1>
+
+        <div class="divider"></div>
+
+        <p class="description-title">Descripción</p>
+        <p class="description-text">
+          {{ producto.descripcion }}
+        </p>
+
+        <div class="note-section ion-margin-top">
+          <p class="description-title">Nota especial</p>
+          <div class="custom-textarea">
+            <ion-textarea
+              label="¿Algún detalle extra?"
+              labelPlacement="floating"
+              placeholder="Ej: Quiero las rosas rojas, dedicatoria: Feliz día..."
+              [(ngModel)]="notaCliente"
+              [autoGrow]="true"
+              rows="3">
+            </ion-textarea>
+          </div>
+        </div>
+        <ion-button (click)="agregarAlCarrito()" expand="block" shape="round" class="add-btn ion-margin-top">
+          Agregar al Carrito
+          <ion-icon slot="end" name="cart-outline"></ion-icon>
+        </ion-button>
+      </div>
+
+    </div>
+
+  </div>
+
+  <ng-template #noData>
+    <div class="ion-text-center ion-padding mt-5 text-white">
+      <h2>Producto no encontrado</h2>
+      <ion-button routerLink="/home" color="light" fill="outline">Volver al Home</ion-button>
+    </div>
+  </ng-template>
+
+</ion-content>

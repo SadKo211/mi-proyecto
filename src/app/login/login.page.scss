@@ -1,62 +1,95 @@
-.logo-container {
-
-  display: block;       
-  margin: 0 auto;      
-  width: 120px;
-    
-
-  margin-bottom: 4px;
-
-    img {
-        max-width: 100%;
-        height: auto;
-    }
+// 1. Fondo Gradiente Morado
+ion-content.bg-gradient {
+  --background: linear-gradient(180deg, #d53369 0%, #daae51 100%); 
+  // O usa tu morado original:
+  --background: linear-gradient(135deg, #a4508b 0%, #5f0a87 74%);
 }
 
-.version-info {
-    text-align: center;
-    font-size: 0.8em;
-    color: #888;
-    margin-top: 16px;
-}
-
-.login-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100vh;
-    padding: 30px;
-
-    form {
-        display: flex;
-        flex-direction: column;
-        gap: 50px;
-    }
-}
-.title {
-  margin-top: 8px;          
-  padding: 0;        
-  font-weight: 500;
-white-space: nowrap;
-text-align: center;
-font-style: italic;
-color: white;
-text-shadow: 2px 2px 6px rgb(255, 255, 255);
-
-}
-.logo-wrapper {
+// 2. Contenedor que centra todo en la pantalla
+.main-container {
   display: flex;
-  flex-direction: column;   
-  align-items: center;     
-  width: 120px;
-}
-.fondo-gradiente {
-  height: 100vh;
-  background: linear-gradient(to bottom, #8000ff, #ffffff);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  align-items: center;     // Centrado Vertical
+  justify-content: center; // Centrado Horizontal
+  height: 100%;            // Ocupa todo el alto
+  width: 100%;
+  padding: 20px;
 }
 
+// 3. La Tarjeta Blanca (Card)
+.login-card {
+  background-color: #ffffff;
+  width: 100%;
+  max-width: 380px;        // Ancho máximo para que no se estire
+  border-radius: 20px;     // Bordes redondos
+  padding: 30px 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2); // Sombra para efecto 3D
+}
 
+// 4. Estilos del Logo/Titulo
+.logo-circle {
+  width: 80px;
+  height: 80px;
+  background-color: #f0f0f0;
+  border-radius: 50%;
+  margin: 0 auto 15px auto; // Centrar logo
+  overflow: hidden;
+  
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
 
+.app-title {
+  color: #333;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.app-subtitle {
+  color: #888;
+  margin-top: 5px;
+  margin-bottom: 30px;
+}
+
+// 5. Estilos de los Inputs (Campos de texto)
+.custom-input-item {
+  --background: #f5f6f8; // Gris muy clarito
+  --border-radius: 10px;
+  border-radius: 10px;
+  --padding-start: 10px;
+  border: 1px solid transparent;
+
+  // Cuando el usuario escribe, el texto debe ser oscuro
+  ion-input {
+    --color: #333; 
+    --placeholder-color: #999;
+  }
+}
+
+// 6. Botones
+.login-btn {
+  --background: #5f0a87; // Morado oscuro
+  --border-radius: 10px;
+  height: 48px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.register-btn {
+  --color: #5f0a87;
+  --border-color: #5f0a87;
+  --border-radius: 10px;
+  height: 48px;
+  font-weight: 600;
+}
+.logo-img {
+  width: 120px;       // Tamaño de la imagen
+  height: 120px;      // Mismo alto para que sea cuadrada/redonda
+  object-fit: cover;  // Para que no se deforme
+  border-radius: 50%; // ESTO LA HACE REDONDA (Quítalo si quieres que sea cuadrada)
+  margin-bottom: 15px; // Espacio entre la foto y el texto
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1); // Una sombra suave opcional
+}

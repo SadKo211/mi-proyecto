@@ -1,0 +1,68 @@
+.bg-gradient {
+  --background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+}
+
+.main-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100%;
+  padding: 20px;
+}
+
+.form-card {
+  background: #ffffff;
+  width: 100%;
+  max-width: 350px;
+  border-radius: 20px;
+  padding: 30px 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.back-button-container {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.logo-img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+  border: 3px solid #f0f0f0;
+}
+
+.app-title {
+  font-weight: 700;
+  color: #333;
+  margin: 5px 0;
+  font-size: 1.5rem;
+}
+
+.app-subtitle {
+  color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 25px;
+}
+
+.custom-input-item {
+  --background: #f5f7fa;
+  --border-radius: 12px;
+  height: 55px;
+  border-radius: 12px;
+}
+
+.main-btn {
+  --border-radius: 12px;
+  margin-top: 20px;
+  font-weight: 600;
+}
+
+.secondary-btn {
+  text-transform: none;
+  font-weight: 500;
+  color: #666;
+}

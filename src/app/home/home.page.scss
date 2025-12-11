@@ -1,106 +1,94 @@
-.home-background {
-  --background: linear-gradient(to bottom, #8000ff, #ffffff);
+// 1. Fondo Gradiente (Igual que login/registro)
+ion-content.bg-gradient {
+  --background: linear-gradient(135deg, #a4508b 0%, #5f0a87 74%);
 }
 
-.home-container {
-  width: 100%;
-  max-width: 500px;
-  margin: 0 auto;       /* centra las cards horizontalmente */
-  padding-top: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;            /* espacio entre cards */
+// 2. Toolbar Transparente/Personalizado
+.home-toolbar {
+  --background: transparent;
+  --color: white;
+  padding-top: 10px;
 }
 
-.card-img {
-  width: 100%;          /* ocupa todo el ancho de la card */
-  max-height: 150px;    /* limita la altura para que no sean demasiado grandes */
-  object-fit: contain;   /* mantiene proporción y muestra toda la imagen */
-  border-top-left-radius: 12px;
-  border-top-right-radius: 12px;
-  background-color: #fff; /* opcional: fondo blanco para ver mejor la imagen si tiene transparencia */
+// 3. Sección de Bienvenida
+.welcome-section {
+  color: white;
+  margin-bottom: 10px;
+
+  h2 {
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+  }
+  
+  p {
+    font-size: 1rem;
+    opacity: 0.9;
+    margin-top: 0;
+  }
 }
 
+// 4. Tarjeta de Producto
+.product-card {
+  background: white;
+  border-radius: 20px; // Bordes redondeados modernos
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+  margin-bottom: 15px;
+  overflow: hidden; // Para que la imagen respete el borde redondo
+}
 
-.version-info {
-  text-align: center;
-  font-size: 0.8em;
+// 5. Contenedor de Imagen
+.image-container {
+  position: relative;
+  height: 200px; // Altura fija para uniformidad
+  overflow: hidden;
+  background-color: #f0f0f0;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; // La imagen se adapta sin deformarse
+    transition: transform 0.3s ease;
+  }
+}
+
+// Etiqueta de Precio flotante
+.price-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 1rem;
+  padding: 8px 12px;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+// 6. Textos
+ion-card-title {
+  color: #5f0a87; // Morado de marca
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+ion-card-subtitle {
   color: #888;
-  margin-top: 16px;
-}
-.home-container {
-  width: 100%;
-  max-width: 500px;
-  margin: 0 auto;
-  padding-top: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-ion-card {
-  border-radius: 16px;            /* bordes redondeados */
-  box-shadow: 0 6px 12px rgba(0,0,0,0.15);  /* sombra ligera */
-  overflow: hidden;                /* que la imagen respete los bordes */
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  background-color: #fff;          /* fondo blanco */
-}
-
-ion-card:hover {
-  transform: translateY(-4px);     /* efecto flotante al pasar el mouse */
-  box-shadow: 0 10px 20px rgba(0,0,0,0.25);
-}
-
-.card-img {
-  width: 100%;
-  max-height: 150px;       /* tamaño de la imagen más pequeño */
-  object-fit: contain;      /* muestra la imagen completa */
-  border-top-left-radius: 16px;
-  border-top-right-radius: 16px;
-  background-color: #f5f5f5;  /* fondo gris claro opcional */
-}
-
-ion-card-header {
-  padding: 10px 15px;
-}
-
-ion-card-title {
-  font-size: 18px;
-  font-weight: bold;
-  color: #333;
-}
-
-ion-card-subtitle {
-  font-size: 14px;
-  color: gray;
-}
-
-ion-card-content {
-  padding: 10px 15px;
-  font-size: 14px;
-  color: #555;
-}
-ion-card-title {
-  font-family: 'Poppins', sans-serif;   /* tipografía moderna */
-  font-size: 20px;
   font-weight: 600;
-  color: #4a148c;                       /* morado oscuro para resaltar */
-  margin-bottom: 4px;
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.2); /* sombra ligera */
 }
 
-ion-card-subtitle {
-  font-family: 'Poppins', sans-serif;
-  font-size: 14px;
-  font-weight: 400;
-  color: #7b1fa2;                       /* morado más claro */
-  margin-bottom: 8px;
-}
-
-ion-card-content {
-  font-family: 'Roboto', sans-serif;    /* más neutral para el contenido */
-  font-size: 14px;
+.description {
   color: #555;
-  line-height: 1.5;
+  font-size: 0.9rem;
+  line-height: 1.4;
 }
 
+// 7. Botones dentro de la tarjeta
+.card-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+
+  .buy-btn {
+    flex-grow: 1; // Ocupa el espacio restante
+    --border-radius: 8px;
+    --background: #5f0a87;
+  }
+}

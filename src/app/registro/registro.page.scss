@@ -1,0 +1,90 @@
+// 1. Fondo Gradiente (El mismo del Login)
+ion-content.bg-gradient {
+  // Opción Morada (ajusta si usaste la otra):
+  --background: linear-gradient(135deg, #a4508b 0%, #5f0a87 74%);
+}
+
+// 2. Centrado de la tarjeta
+.main-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100%;
+  width: 100%;
+  padding: 20px;
+}
+
+// 3. Tarjeta Blanca
+.register-card {
+  background-color: #ffffff;
+  width: 100%;
+  max-width: 400px;
+  border-radius: 20px;
+  padding: 30px 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+// 4. Logo e Imagen
+.logo-img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.app-title {
+  color: #5f0a87; // Color morado
+  font-weight: 700;
+  margin: 0;
+  font-size: 1.6rem;
+}
+
+.app-subtitle {
+  color: #666;
+  margin-top: 5px;
+  margin-bottom: 25px;
+  font-size: 0.95rem;
+}
+
+// 5. Inputs Estilizados
+.custom-input-item {
+  --background: #f5f6f8;
+  --border-radius: 10px;
+  border-radius: 10px;
+  border: 1px solid transparent;
+
+  ion-input {
+    --color: #333;
+    --placeholder-color: #999;
+  }
+  
+  // Ajuste para iconos dentro del input
+  ion-icon {
+    margin-right: 8px;
+  }
+}
+
+// 6. Botones
+.main-btn {
+  --background: #5f0a87;
+  --border-radius: 10px;
+  height: 48px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 10px rgba(95, 10, 135, 0.3);
+}
+
+.secondary-btn {
+  --color: #5f0a87;
+  font-weight: 600;
+  text-transform: none; // Para que no sea todo mayúsculas
+  font-size: 1rem;
+}
+
+.small-text {
+  color: #888;
+  margin-bottom: 0;
+  font-size: 0.9rem;
+}
